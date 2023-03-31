@@ -26,26 +26,24 @@ document.addEventListener("DOMContentLoaded", function () {
 let score = 0;
 const gameOverPage = document.getElementById("gameOverPage");
 
-const restartButton = document.getElementById("restartButton");
-const cRestartButton = document.getElementById("cRestartButton");
+// const restartButton = document.getElementById("restartButton");
+// const cRestartButton = document.getElementById("cRestartButton");
 
 function showGameOverPage() {
   // finalScore.textContent = score;
   gameOverPage.style.display = "flex";
-  
 }
 
-restartButton.addEventListener("click", function () {
-  location.reload(); // 페이지 새로고침으로 게임 리셋
-});
+// restartButton.addEventListener("click", function () {
+//   location.reload(); // 페이지 새로고침으로 게임 리셋
+// });
 
-cRestartButton.addEventListener("click", function () {
-  location.reload(); // 페이지 새로고침으로 게임 리셋
-});
+// cRestartButton.addEventListener("click", function () {
+//   location.reload(); // 페이지 새로고침으로 게임 리셋
+// });
 
 function showGameClearPage() {
   finalScore.textContent = score;
   const gameClearPage = document.getElementById("gameClearPage");
   gameClearPage.style.display = "flex";
-  
 }
