@@ -182,7 +182,7 @@ function resetGame() {
   remainTime.textContent = "00:30";
   gameOverPage.style.display = "none";
   gameClearPage.style.display = "none";
-  heroCond.style.left = BG_WIDTH / 2 - HERO_WIDTH / 2 + "px";
+  heroCond.style.left = "50%";
   heroCond.style.bottom = HERO_HEIGHT + "px";
 
   gameStarted = true;
@@ -193,5 +193,8 @@ function resetGame() {
 }
 const restartButton = document.getElementById("restartButton");
 restartButton.addEventListener("click", resetGame);
+restartButton.addEventListener("touchstart", resetGame);
+
 const cRestartButton = document.getElementById("cRestartButton");
 cRestartButton.addEventListener("click", resetGame);
+cRestartButton.addEventListener("touchstart", resetGame);
