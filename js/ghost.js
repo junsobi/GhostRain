@@ -157,3 +157,37 @@ document.addEventListener("touchstart", function (event) {
   event.preventDefault();
   startGame();
 });
+
+function resetGame() {
+  // 게임 초기화 코드 작성
+  heartCount = 5;
+  score = 0;
+  timeLeft = 30;
+  ghostCount = 0;
+  gameStarted = false;
+  clearInterval(moveGhostInterval);
+  clearTimeout(createGhostTimeout);
+  const ghostList = document.querySelectorAll("#bg > div.ghost");
+  ghostList.forEach(function (ghost) {
+    ghost.remove();
+  });
+  const heartList = heartCond.querySelectorAll("li");
+  heartList.forEach(function (heart) {
+    heart.innerHTML = '<i class="fa-solid fa-heart"></i>';
+  });
+  document.getElementById("scoreNumber").textContent = "0";
+  const remainTime = document.querySelector(".remainTime");
+  remainTime.textContent = "00:30";
+  gameOverPage.style.display = "none";
+  gameClearPage.style.display = "none";
+  heroCond.style.left = BG_WIDTH / 2 - HERO_WIDTH / 2 + "px";
+  heroCond.style.top = BG_HEIGHT - HERO_HEIGHT + "px";
+  heroCond.classList.add("stop");
+  heroCond.classList.remove("run");
+  heroCond.classList.add("ready");
+}
+
+const restartButton = document.getElementById("restartButton");
+restartButton.addEventListener("click", resetGame);
+const cRestartButton = document.getElementById("cRestartButton");
+cRestartButton.addEventListener("click", resetGame);
