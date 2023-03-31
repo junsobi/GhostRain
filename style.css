@@ -1,3 +1,124 @@
+@media only screen and (max-width: 799px) {
+  body {
+    overflow: hidden;
+  }
+  .spaceBt {
+    max-width: 375px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1px;
+    padding: 0 1px;
+  }
+
+  .scoreContent,
+  .timer {
+    flex: 1;
+    max-width: 40%;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 10px;
+  }
+  .timer {
+    margin-right: 10px;
+  }
+  .scoreContent {
+    margin-left: 10px;
+  }
+
+  #bg {
+    width: 100%;
+    max-width: 375px;
+    margin: 0px auto;
+    background-size: cover;
+    background-position: center;
+  }
+
+  #hero {
+    width: 17.5px;
+    height: 27px;
+    left: 50%;
+  }
+
+  #gameTitle {
+    font-size: 20px;
+  }
+
+  #billboard,
+  #detailContet {
+    font-size: 16px;
+    padding: 2px 0px;
+    width: 100%;
+  }
+
+  #reStartButton {
+    width: 200px;
+    height: 20px;
+    font-size: 8px;
+    margin-top: 5px;
+  }
+  .remainingLife {
+    padding-right: 100px;
+  }
+  .remainingLife li {
+    margin-right: 2.5px;
+  }
+
+  .currentDiff {
+    font-size: 12px;
+  }
+
+  #name {
+    font-size: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  #subName {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .gOverTitle {
+    font-size: 50px;
+    margin-bottom: 5px;
+  }
+
+  #gameOverPage p {
+    font-size: 12px;
+    margin-bottom: 50px;
+  }
+
+  #gameOverPage button {
+    padding: 5px 15px;
+    font-size: 8px;
+    border-radius: 10px;
+  }
+
+  .subClearTitle {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .gClearTitle {
+    font-size: 50px;
+    margin-bottom: 5px;
+  }
+
+  #gameClearPage p {
+    font-size: 12px;
+    margin-bottom: 50px;
+  }
+
+  #gameClearPage button {
+    padding: 5px 15px;
+    font-size: 8px;
+    border-radius: 10px;
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -8,7 +129,6 @@ body {
   width: 800px;
   display: flex;
   justify-content: space-around;
-  gap: 300px;
 }
 #bg {
   width: 800px;
@@ -32,7 +152,7 @@ body {
   background: url("./images/hero.png") no-repeat;
   position: absolute;
   bottom: 0;
-  left: 400px;
+  left: 50%;
   transition: left 0.2s ease-in-out, bottom 0.2s ease-in-out;
 }
 #hero.ready {
@@ -72,6 +192,7 @@ body {
 }
 #billboard,
 #detailContet {
+  width: 800px;
   font-size: 20px;
   text-align: center;
   background-color: #4b0082;
@@ -95,10 +216,11 @@ body {
   display: flex;
   flex-direction: row;
   list-style: none;
-  padding: 0;
+  padding: 0 px;
 }
 .remainingLife li {
-  margin-right: 5px;
+  margin-right: 0px;
+  font-size: 15px;
 }
 
 .currentDiff {
@@ -184,7 +306,7 @@ body {
 }
 
 .gOverTitle {
-  font-size: 100px;
+  font-size: 75px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
@@ -225,7 +347,7 @@ body {
 }
 
 .gClearTitle {
-  font-size: 100px;
+  font-size: 75px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 10px;
