@@ -4,6 +4,7 @@ let createGhostTimeout;
 let MAX_GHOST = 30;
 let timeLeft = 30;
 let gameStarted = false;
+let timerInterval; // 타이머 초기화 변수 추가
 
 function collides(hero, ghost) {
   const heroRect = hero.getBoundingClientRect();
@@ -165,6 +166,7 @@ function resetGame() {
   timeLeft = 30;
   ghostCount = 0;
   gameStarted = false;
+  clearInterval(timerInterval);
   clearInterval(moveGhostInterval);
   clearTimeout(createGhostTimeout);
   const ghostList = document.querySelectorAll("#bg > div.ghost");
@@ -181,12 +183,14 @@ function resetGame() {
   gameOverPage.style.display = "none";
   gameClearPage.style.display = "none";
   heroCond.style.left = BG_WIDTH / 2 - HERO_WIDTH / 2 + "px";
-  heroCond.style.top = BG_HEIGHT - HERO_HEIGHT + "px";
-  heroCond.classList.add("stop");
-  heroCond.classList.remove("run");
-  heroCond.classList.add("ready");
-}
+  heroCond.style.bottom = HERO_HEIGHT + "px";
 
+  gameStarted = true;
+  createGhost(); // 새로운 귀신 내려보내기
+  moveGhost();
+  moveGhostInterval = setInterval(moveGhost, 100);
+  timerInterval = null;
+}
 const restartButton = document.getElementById("restartButton");
 restartButton.addEventListener("click", resetGame);
 const cRestartButton = document.getElementById("cRestartButton");
