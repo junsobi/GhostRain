@@ -132,7 +132,7 @@ function updateTime() {
   decreaseTime();
 }
 
-document.addEventListener("keydown", function (event) {
+function startGame() {
   const firstPage = document.getElementById("firstPage");
   if (
     !gameStarted && // 게임이 시작되지 않은 경우에만 실행
@@ -147,4 +147,13 @@ document.addEventListener("keydown", function (event) {
       heroCond.classList.remove("ready");
     }
   }
+}
+
+document.addEventListener("keydown", function (event) {
+  startGame();
+});
+
+document.addEventListener("touchstart", function (event) {
+  event.preventDefault();
+  startGame();
 });
