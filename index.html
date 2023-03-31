@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Udemy - Ghost Rain</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/da75aff53b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="gameTitle">
+      <i class="fa-solid fa-ghost"></i>&nbsp;&nbsp;&nbsp;&nbsp;Ghost
+      Rain&nbsp;&nbsp;
+      <i class="fa-solid fa-umbrella"></i>
+    </div>
+    <div class="spaceBt" id="billboard">
+      <div class="timer">
+        <i class="fa-solid fa-stopwatch"></i>
+        <div class="remainTime">00:00</div>
+      </div>
+      <div class="scoreContent">
+        <div id="scoreText">Score</div>
+        <div id="scoreNumber">0</div>
+      </div>
+    </div>
+    <div id="bg">
+      <!-- 배경 -->
+      <div id="firstPage">
+        <div id="name">Ghost Rain</div>
+        <div id="subName">
+          용사님! 쏟아지는 귀신들로부터 <br />마을을 지켜주세요
+        </div>
+        <div id="startButton">Press any key to start</div>
+      </div>
+      <div id="hero" class="stop" class="ready"></div>
+      <!-- 용사 -->
+      <div id="gameOverPage">
+          <div class="gOverTitle">GameOver</div>
+          <p>마을이 폐허가 되었습니다....</p>
+          <button id="restartButton">다시 보호하기</button>
+      </div>
+      <div id="gameClearPage">
+        <div class="gClearTitle">Mission Clear</div>
+        <div class="subClearTitle">마을을 구해주셔서 감사합니다 용사님!</div>
+        <p>귀신을 <span id="finalScore"></span>마리 처리하셨습니다.</p>
+        <button id="cRestartButton">다시 보호하기</button>
+      </div>
+      </div>
+    </div>
+
+    <div class="spaceBt" id="detailContet">
+      <div class="currentDiff">
+        <!-- <span>현재모드 :</span> <span class="myMode">이지모드</span> -->
+      </div>
+
+      <ul class="remainingLife" data-life="5">
+        <!-- <i class="fa-regular fa-heart"></i> 빈 하트-->
+        <li><i class="fa-solid fa-heart"></i></li>
+        <li><i class="fa-solid fa-heart"></i></li>
+        <li><i class="fa-solid fa-heart"></i></li>
+        <li><i class="fa-solid fa-heart"></i></li>
+        <li><i class="fa-solid fa-heart"></i></li>
+      </ul>
+    </div>
+    <!-- <button id="startButton">Start</button> -->
+
+    <script src="js/settings.js"></script>
+    <script src="js/ghost.js" async></script>
+    <script src="js/hero.js" async></script>
+    <script src="js/init.js" async></script>
+  </body>
+</html>
