@@ -185,11 +185,13 @@ function resetGame() {
   heroCond.style.left = "50%";
   heroCond.style.bottom = HERO_HEIGHT + "px";
 
+  // timerInterval 변수 초기화
+  timerInterval = null;
+
   gameStarted = true;
   createGhost(); // 새로운 귀신 내려보내기
   moveGhost();
   moveGhostInterval = setInterval(moveGhost, 100);
-  timerInterval = null;
 }
 const restartButton = document.getElementById("restartButton");
 restartButton.addEventListener("click", resetGame);
